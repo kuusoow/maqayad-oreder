@@ -1,17 +1,17 @@
 body {
-    margin: 10px auto;
+    margin: 0;
      font-family: "Smythe";
-    width: 500px;
+    /* width: 500px; */
      font-family: "Smythe", system-ui;
      padding: 0;
 
     
 } 
-/* .container { */
-    /* width: 95%; */
-    /* margin: 0 auto; */
-     /* font-family: "Smythe",sans-serif; */
-/* } */
+.container { 
+    width:400px;
+    margin: 10px auto;
+     font-family: "Smythe",sans-serif;
+ }
 .img{
     background-image:url('header.png');
     background-repeat: no-repeat;
