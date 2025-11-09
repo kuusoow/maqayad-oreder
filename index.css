@@ -7,12 +7,21 @@ body {
 
     
 } 
-.container { 
-    width:400px;
-    margin: 10px auto;
-     font-family: "Smythe",sans-serif;
+.container{ 
+    
+    width:90%;
+    max-width: 800px;
+    margin: 0 auto;
+    
+   
+    
+     
+     
  }
 .img{
+    margin-bottom: 0;
+    margin-top: 10px;
+width: 100%;
     background-image:url('header.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -33,6 +42,8 @@ body {
     font-size: 39px;
     font-weight: 400;
     margin-bottom: 4px;
+
+    
     /* line-height: 24px; */
       /* font-family: "Smythe",sans-serif; */
 }
@@ -44,11 +55,14 @@ body {
     font-weight: 200;
     /* line-height: 13; */
     margin-top: 0;
+    
 }
 .all-orders{
+    margin: 0;
 position: relative;
 }
 .orders{
+    height: 200px;
     margin: 0;
     display: flex;
     border-bottom: 2px solid #DEDEDE;;
@@ -72,13 +86,14 @@ padding-top: 90px;
     font-weight: 400;
     margin-bottom: 0px;
     margin-top:0px ;
-    margin-bottom: 7px;
+    margin-bottom: 3px;
 }
 
 .order-info h4{
 color: #8B8B8B;
 font-size: 17px;
 margin-top:0;
+margin-bottom: 5px;
 
 }
 .order-info h5{
@@ -99,7 +114,7 @@ h6{
     padding:1px 15px;
 }
 #chosen-order {
-margin-top: 80px;
+margin-top: 40px;
 }
 #chosen-order h3 {
 text-align: center;
@@ -163,4 +178,5 @@ border: 1px solid black;
     padding: 15px;
     width: 100%;
     border-radius: 4px;
+margin-bottom: 50px;
 }

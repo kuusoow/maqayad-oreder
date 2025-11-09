@@ -1,61 +1,52 @@
 <html>
-    <head>
-  
+  <head>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Smythe&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-       <link rel="stylesheet" href="index.css">
-       <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-       <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <div class="header">
-                <div class="img">
-                    <div class="container"></div>
-                        <h1>Somali’s Diner</h1>
-                        <p>The best burgers and pizzas in town.</p>
-                    
+  <body>
+    <div class="header container">
+      <div class="img">
+        <h1>Somali’s Diner</h1>
+        <p>The best burgers and pizzas in town.</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="diveEL" id="divEl"></div>
+
+      <div class="target-order" id="target-order"></div>
+      <div id="chosen-order">
+        <h3>your order</h3>
+        <div class="items">
+          <div class="item">
+            <div class="name">
+              <ul id="ulist"></ul>
+            </div>
+
+            <div id="item-prices"></div>
+          </div>
         </div>
+        <div class="border-line"></div>
 
-                   </div>
-                 
-                   
-                   <div class="diveEL" id="divEl">
-                     
+        <div id="total-price-text">
+          <h5>Toatal price:</h5>
+          <h4 id="total-price"></h4>
+        </div>
+        <button class="btn">Complete order</button>
+      </div>
+    </div>
 
-                    </div>   
-                    <div class="target-order" id="target-order"></div>     
-                                 <div id="chosen-order">
-                                <h3>your order</h3>
-                                <div class="items">
-                                    <div class="item">
-                                         <div class="name">
-                                         <ul id="ulist">
-                                           
-                                        
-                                        </ul>         
-                                        </div>
-                        
-                                        <div id="item-prices">
-                                        </div> 
-                                    </div>
-                                    
-                                </div>
-                                <div class="border-line"></div>
-
-                                
-                                <div id="total-price-text">
-                                    <h5>Toatal price:</h5>
-                                    <h4 id="total-price"></h4>
-                                
-                                </div>
-                                <button class="btn">Complete order</button>
-                                   
-                        </div>
-                        </div>
-	<script type="module" src="index.js"></script>
-    </body>
+    <script type="module" src="index.js"></script>
+  </body>
 </html>
-
