@@ -1,5 +1,6 @@
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,24 +29,35 @@
       <div class="target-order" id="target-order"></div>
       <div id="chosen-order">
         <h3>your order</h3>
-        <div class="items">
-          <div class="item">
-            <div class="name">
-              <ul id="ulist"></ul>
-            </div>
-
-            <div id="item-prices"></div>
-          </div>
-        </div>
+        <div class="items" id="items"></div>
         <div class="border-line"></div>
 
         <div id="total-price-text">
           <h5>Toatal price:</h5>
           <h4 id="total-price"></h4>
         </div>
-        <button class="btn">Complete order</button>
+        <button class="btn" id="Complete">Complete order</button>
       </div>
     </div>
+    <h4 id="completed-msg" class="container"></h4>
+    <form id="form">
+      <h2>Enter card details</h2>
+      <input
+        type="text"
+        required
+        placeholder="Enter your name"
+        id="name"
+        name="name"
+      />
+      <input
+        type="number"
+        required
+        placeholder="Enter card number"
+        id="num-input"
+      />
+      <input type="number" required placeholder="Enter CVV" id="cv-input" />
+      <button type="submit" class="btn" id="sbmtbtn">Pay</button>
+    </form>
 
     <script type="module" src="index.js"></script>
   </body>

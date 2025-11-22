@@ -63,6 +63,7 @@ position: relative;
 }
 .orders{
     height: 200px;
+    padding: 0;
     margin: 0;
     display: flex;
     border-bottom: 2px solid #DEDEDE;;
@@ -179,4 +180,40 @@ border: 1px solid black;
     width: 100%;
     border-radius: 4px;
 margin-bottom: 50px;
+}
+
+
+form{
+    display:none;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #ffffff;
+    position: fixed;
+    width: 350px;
+    height: 300px;
+    top: 30%;
+    right: 10%;
+     font-family: "Inter", sans-serif;
+     z-index: 3;
+     padding: 20px;
+}
+input{
+    outline: 0;
+    padding: 10px;
+    font-size: 15px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+   -webkit-appearance: none;
+   margin: 0;
+}
+
+.message{
+    background-color:#ECFDF5 ;
+    color:#065F46;
+    padding:  40px 20px;
+    text-align: center;
+    letter-spacing: 2;
+    
+    
 }

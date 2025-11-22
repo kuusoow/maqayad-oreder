@@ -1,115 +1,90 @@
-import orders from '/data.js'
+import orders from "/data.js";
 // console.log(orders)
-                   
-const divEl = document.getElementById('divEl')
-const targetOrders = document.getElementById('target-order')
-const ulist =document.getElementById('ulist')
-const itemPrices =document.getElementById('item-prices')
-const totalPriceText =document.getElementById('total-price-text')
-const chosenOrder = document.getElementById('chosen-order')
-const totalPrice =document.getElementById('total-price')
 
-console.log(totalPriceText)
+const divEl = document.getElementById("divEl");
+const targetOrders = document.getElementById("target-order");
+const items = document.getElementById("items");
+const itemPrices = document.getElementById("item-prices");
+const totalPriceText = document.getElementById("total-price-text");
+const chosenOrder = document.getElementById("chosen-order");
+const totalPrice = document.getElementById("total-price");
+const form = document.getElementById("form");
+let nameInbut = document.getElementById("name");
+let numInput = document.getElementById("num-input");
+let cvInput = document.getElementById("cv-input");
+console.log(form);
+console.log(nameInbut, "when");
+console.log(cvInput);
+console.log(numInput);
+let total = 0;
+console.log(totalPriceText);
 
+console.log(targetOrders);
 
-// const itemList = document.getElementById('item')
-// const removeText = document.getElementById('remove')
-console.log(targetOrders)
+divEl.addEventListener("click", function (e) {
+  if (e.target.dataset.plus) {
+    orderhtml(e.target.dataset.plus);
+  }
+});
 
+function orderhtml(id) {
+  chosenOrder.style.display = "block";
 
-divEl.addEventListener("click",function(e){
-    if(e.target.dataset.plus){
-        orderhtml(e.target.dataset.plus)
-    }
-})
-let total = 0
- function orderhtml(id){
-    chosenOrder.style.display ='block'
-    
-    let targetId = Number(id)
-    console.log(targetId)
+  let targetId = Number(id);
+  console.log(targetId);
 
-const targetOrder = orders.filter(function(order){
-    return order.id === targetId
+  const targetOrder = orders.filter(function (order) {
+    return order.id === targetId;
+  })[0];
+  console.log("waala taabtay");
 
-    
-})[0]
-console.log('waala taabtay')
-let item = document.createElement('li')
-item.classList.add('name')
-item.textContent = targetOrder.name
-ulist.appendChild(item)
-let btn =document.createElement('button')
-btn.textContent = 'remove'
-btn.classList.add('btn-remove-item')
+  let item = document.createElement("div");
+  item.classList.add("item");
+  items.appendChild(item);
 
-item.appendChild(btn)
-let itemPrice = document.createElement('h5')
-itemPrice.classList.add('price')
-itemPrice.textContent = ` $${targetOrder.price}`
+  let itemLeft = document.createElement("div");
+  itemLeft.classList.add("item");
+  item.appendChild(itemLeft);
 
-itemPrices.appendChild(itemPrice)
+  let name = document.createElement("h4");
+  name.textContent = targetOrder.name;
+  itemLeft.appendChild(name);
 
-total += Number(targetOrder.price)
-console.log(total)
+  let removeBtn = document.createElement("span");
+  removeBtn.textContent = "remove";
+  removeBtn.classList.add("btn-remove-item");
+  itemLeft.appendChild(removeBtn);
 
-totalPrice.textContent = `$${total}`
+  let price = document.createElement("h5");
+  price.textContent = ` $${targetOrder.price}`;
+  item.appendChild(price);
 
+  total += targetOrder.price;
+  totalPrice.textContent = total;
 
-// let totalPrice = document.createElement('h4')
-// totalPrice.classList.add('price')
+  removeBtn.addEventListener("click", function () {
+    item.remove();
+    total -= targetOrder.price;
+    totalPrice.textContent = total;
+  });
+}
 
-// totalPrice.textContent = ` $${targetOrder.price + targetOrder.price}`
-// totalPriceText.appendChild(totalPrice)
+function rendering() {
+  // let orderhtml = ''
 
-                
-            
+  return orders
+    .map(function (order) {
+      const { name, ingredients, id, price, emoji } = order;
 
+      let detail = ingredients
+        .map(function (ing) {
+          return ing;
+        })
+        .join(", ");
 
+      console.log(detail);
 
- } 
-
-
-//  <div class="chosen-order">
-//                                 <h3>your order</h3>
-//                                 <div class="items">
-//                                     <div class="item">
-//                                         <!-- <div class="name">
-//                                             <ul id="ulist">
-
-//                                             </ul>
-//                                         </div>
-//                                         <div class="remove" id ="remove"></div> -->
-//                                     </div>
-//                                     <div class="item-price"></div>
-//                                 </div>
-//                                 <div class="border-line"></div>
-//                                 <div class="total-price">
-//                                     <h5>Toatal price:</h5>
-//                                     <p></p>
-//                                 </div>
-//                                 <div class="btn">Complete order</div>
-// </div>
-
-
-
-
-
-
-
-function rendering(){
-    // let orderhtml = ''
-   
- return orders.map(function(order){
-    const{name ,ingredients,id,price,emoji} =order
-    
-   let detail =  ingredients.map(function(ing){
-        return ing
-    }).join(", ")
-
-    console.log(detail)
-    
-    return`
+      return `
     <div class="all-orders">
             <div class="orders">
                     <div class="order-emoji"><p>${emoji}</p></div>
@@ -125,12 +100,40 @@ function rendering(){
 
 
     
-    `
-    
-}).join('')
-
-
+    `;
+    })
+    .join("");
 }
-divEl.innerHTML = rendering(orders)
+divEl.innerHTML = rendering(orders);
 
-console.log('soo dhawaaw abdalla')
+console.log("soo dhawaaw abdalla");
+
+document.getElementById("Complete").addEventListener("click", function(){
+    if(total> 0){
+        complete()
+    }else{
+        alert(' you donot have order')
+    }
+});
+
+function complete() {
+  document.getElementById("form").style.display = "flex";
+}
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  console.log("waan  bixiyey");
+  form.style.display = "none";
+
+  console.log(nameInbut.value);
+  let dataForm = new FormData(form);
+  const name = dataForm.get("name");
+  console.log(name);
+  document.getElementById(
+    "completed-msg"
+  ).textContent = ` Thanks, ${name} your order is on it's way`;
+  document.getElementById("completed-msg").classList.add("message");
+  nameInbut.value = "";
+  numInput.value = "";
+  cvInput.value = "";
+});
