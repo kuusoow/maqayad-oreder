@@ -20,8 +20,8 @@ body {
  }
 .img{
     margin-bottom: 0;
-    margin-top: 10px;
-width: 100%;
+    /* margin-top: 10px; */
+    width: 100%;
     background-image:url('header.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -191,8 +191,8 @@ form{
     position: fixed;
     width: 350px;
     height: 300px;
-    top: 30%;
-    right: 10%;
+    top: 20%;
+    left: 10%;
      font-family: "Inter", sans-serif;
      z-index: 3;
      padding: 20px;
