@@ -70,7 +70,7 @@ position: relative;
     
 }
 .order-emoji p{
-    font-size: 80px;
+    font-size: 60px;
     opacity:70%;
     color: black;
     font-family: "Inter", sans-serif;
@@ -78,8 +78,8 @@ position: relative;
     
 }
 .order-info {
-padding-left: 40px;
-padding-top: 90px;
+padding-left: 20px;
+padding-top: 70px;
 }
 .order-info h3{
     font-size: 35px;
@@ -104,7 +104,7 @@ margin-bottom: 5px;
 }
 h6{
       font-family: "Inter", sans-serif;
-      font-size: 46px;
+      font-size: 40px;
       font-weight: 200;
     color:#3C3C3C;
     position: absolute;
@@ -112,7 +112,7 @@ h6{
     right: 0;
     border: 2px solid #DEDEDE;
     border-radius:100%;
-    padding:1px 15px;
+    padding:1px 13px;
 }
 #chosen-order {
 margin-top: 40px;

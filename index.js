@@ -36,7 +36,7 @@ function orderhtml(id) {
   const targetOrder = orders.filter(function (order) {
     return order.id === targetId;
   })[0];
-  console.log("waala taabtay");
+  
 
   let item = document.createElement("div");
   item.classList.add("item");
