@@ -189,8 +189,8 @@ form{
     gap: 20px;
     background-color: #ffffff;
     position: fixed;
-    width: 350px;
-    height: 300px;
+    width: 70%;
+    /* height: 300px; */
     top: 20%;
     left: 10%;
      font-family: "Inter", sans-serif;
